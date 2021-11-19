@@ -7,6 +7,14 @@
     <title>Atom - Explore for {{ $query }}</title>
 </head>
 <body>
-    
+    <header>
+
+    </header>
+    <main>
+        
+    </main>
+    <footer>
+
+    </footer>
 </body>
 </html>
