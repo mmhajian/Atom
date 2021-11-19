@@ -18,12 +18,12 @@
             <div>
                 <form action="/explore" method="get">
                     <div>
-                        <input type="text" name="query" id="" placeholder="Please enter atom">
+                        <input type="text" name="query" id="" placeholder="Please enter atom" required>
                     </div>
                     <div>
                         <div>
                             <label for="param">Atom Name</label>
-                            <input type="radio" name="param" id="" value="name">
+                            <input type="radio" name="param" id="" value="name" checked>
                         </div>
                         <div>
                             <label for="param">Atomic Number</label>
@@ -61,4 +61,4 @@
 
     </footer>
 </body>
-</html>l
+</html>
