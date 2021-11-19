@@ -23,31 +23,31 @@
                     <div>
                         <div>
                             <label for="param">Atom Name</label>
-                            <input type="radio" name="param" id="" value="name" checked>
+                            <input type="radio" name="param" id="chb-name" value="name" checked>
                         </div>
                         <div>
                             <label for="param">Atomic Number</label>
-                            <input type="radio" name="param" id="" value="number">
+                            <input type="radio" name="param" id="chb-number" value="number">
                         </div>
                         <div>
                             <label for="param">Atomic Mass</label>
-                            <input type="radio" name="param" id="" value="mass">
+                            <input type="radio" name="param" id="chb-mass" value="mass">
                         </div>
                         <div>
                             <label for="param">Symbol</label>
-                            <input type="radio" name="param" id="" value="symbol">
+                            <input type="radio" name="param" id="chb-symbol" value="symbol">
                         </div>
                         <div>
                             <label for="param">Isotopes</label>
-                            <input type="radio" name="param" id="" value="isotopes">
+                            <input type="radio" name="param" id="chb-isotopes" value="isotopes">
                         </div>
                         <div>
                             <label for="param">Neutrons</label>
-                            <input type="radio" name="param" id="" value="neutrons">
+                            <input type="radio" name="param" id="chb-neutrons" value="neutrons">
                         </div>
                         <div>
                             <label for="param">Atom Stability</label>
-                            <input type="radio" name="param" id="" value="stability">
+                            <input type="radio" name="param" id="chb-stability" value="stability">
                         </div>
                     </div>
                     <div>
