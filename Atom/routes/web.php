@@ -25,7 +25,7 @@ Route::prefix("explore")->group(function() {
     });
 
     Route::get("/{param}/{query}", function($param, $query) {
-        return view("explore", [
+        return view("explore.explore", [
             "param" => $param,
             "query" => $query
         ]);
@@ -38,10 +38,19 @@ Route::prefix("atom")->group(function() {
     });
 
     Route::get("/{atom}", function($atom) {
-        $atoms = Atom::all();
-        dd($atoms);
-        return view("atom", [
-            "atom" => $atom,
-        ]);
+        //Variables
+        $atoms = Atom::where("name", "like", "%og%")->exists();
+        
+        //Proccesses
+        if ($atoms) {
+            return view("atom.atom", [
+                "atom" => $atom,
+            ]);
+        }
+        else {
+            return view("found.atom", [
+                "atom" => $atom,
+            ]);
+        }
     });
 });
