@@ -15,7 +15,7 @@ use App\Models\Atom;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 // Explore for atoms
@@ -32,14 +32,30 @@ Route::prefix("explore")->group(function() {
     });
 });
 
+// Atoms
 Route::prefix("atom")->group(function() {
     Route::get("/", function() {
 
     });
 
     Route::get("/{atom}", function($atom) {
-        return view("atom.atom", [
-            "atom" => $atom,
-        ]);
+        //Variables
+        $atom_exists = Atom::where("name", ucfirst($atom))->exists();
+
+        //Proccesses
+
+        //Atom exists
+        if ($atom_exists) {
+            return view("atom.atom", [
+                "atom" => $atom,
+            ]);
+        }
+
+        //Atom not exists
+        else {
+            return view("found.atom", [
+                "atom" => $atom,
+            ]);
+        }
     });
 });
