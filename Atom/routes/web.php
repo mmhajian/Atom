@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Atom;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +38,10 @@ Route::prefix("atom")->group(function() {
     });
 
     Route::get("/{atom}", function($atom) {
+        $atoms = Atom::all();
+        dd($atoms);
         return view("atom", [
-            "atom" => $atom
+            "atom" => $atom,
         ]);
     });
 });
