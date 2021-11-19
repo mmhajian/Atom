@@ -16,3 +16,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Explore for atoms
+Route::prefix("explore")->group(function() {
+    Route::get("/", function() {
+
+    });
+
+    Route::get("/{param}/{query}", function($param, $query) {
+        return view("explore", [
+            "param" => $param,
+            "query" => $query
+        ]);
+    });
+});
+
+Route::prefix("atom")->group(function() {
+    Route::get("/", function() {
+
+    });
+
+    Route::get("/{name}", function($name) {
+        return view("atom", [
+            "name" => $name
+        ]);
+    });
+});
