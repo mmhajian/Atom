@@ -38,19 +38,8 @@ Route::prefix("atom")->group(function() {
     });
 
     Route::get("/{atom}", function($atom) {
-        //Variables
-        $atoms = Atom::where("name", "like", "%og%")->exists();
-        
-        //Proccesses
-        if ($atoms) {
-            return view("atom.atom", [
+        return view("atom.atom", [
                 "atom" => $atom,
-            ]);
-        }
-        else {
-            return view("found.atom", [
-                "atom" => $atom,
-            ]);
-        }
+        ]);
     });
 });
