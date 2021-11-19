@@ -34,7 +34,7 @@
                             <input type="radio" name="param" id="chb-mass" value="mass">
                         </div>
                         <div>
-                            <label for="chb-sybmol">Symbol</label>
+                            <label for="chb-symbol">Symbol</label>
                             <input type="radio" name="param" id="chb-symbol" value="symbol">
                         </div>
                         <div>
