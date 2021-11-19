@@ -39,7 +39,7 @@ Route::prefix("atom")->group(function() {
 
     Route::get("/{atom}", function($atom) {
         return view("atom.atom", [
-                "atom" => $atom,
+            "atom" => $atom,
         ]);
     });
 });
