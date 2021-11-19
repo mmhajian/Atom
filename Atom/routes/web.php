@@ -36,9 +36,9 @@ Route::prefix("atom")->group(function() {
 
     });
 
-    Route::get("/{name}", function($name) {
+    Route::get("/{atom}", function($atom) {
         return view("atom", [
-            "name" => $name
+            "atom" => $atom
         ]);
     });
 });
