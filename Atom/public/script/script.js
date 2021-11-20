@@ -17,3 +17,7 @@ function atomPholder() {
     //Set placeholder
     atom.placeholder = pl;
 }
+
+function goHome() {
+    window.location = "/";
+}
