@@ -1,3 +1,10 @@
+:root {
+    --p-color: rgb(0, 195, 255);
+    --bs-blur: 0 0 8px rgba(77, 74, 74, 0.6);
+    --bs-hover: 0 0 12px rgba(77, 74, 74, 0.767);
+    --bs-focus: 0 0 12px rgb(0, 195, 255);
+}
+
 @font-face {
     font-family: Roboto;
     src: url(../fonts/robotoregular.woff);
@@ -5,10 +12,98 @@
 
 body {
     text-align: center;
+    font-family: Roboto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: default;
+}
+
+.input-atom {
+    outline: none;
+    border-radius: 22px;
+    color: rgb(0, 195, 255);
+    font-size: 16px;
+    background-color: white;
+    width: 40%;
+    padding: 12.5px;
+    border: none;
+    box-shadow: var(--bs-blur);
+    padding-left: 20px;
+    cursor: text;
+    transition: 00.5s;
+}
+
+.input-atom:hover {
+    box-shadow: var(--bs-hover);
+}
+
+.input-atom:focus {
+    box-shadow: var(--bs-focus);
+}
+
+.img-title {
+    width: 12.5%;
+}
+
+.img-title-text {
+    width: 25%;
+}
+
+.param {
+    margin-top: 2.5%;
+    outline: none;
+    border-radius: 22px;
+    color: var(--p-color);
+    font-size: 16px;
+    background-color: white;
+    width: 42.5%;
+    padding: 12.5px;
+    border: none;
+    box-shadow: var(--bs-blur);
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: 00.5s;
+}
+
+option {
+    color: var(--p-color);
+    background-color: white;
+    border-radius: 50px;
+    padding: 4%;
 }
 
 .btn-submit {
-    background-color: white;
+    margin-top: 2.5%;
     outline: none;
+    border-radius: 22px;
+    color: var(--p-color);
+    font-size: 16px;
+    background-color: white;
+    width: 42.5%;
+    padding: 12.5px;
     border: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: 00.5s;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    box-shadow: var(--bs-hover);
+}
+
+.btn-submit:focus {
+    box-shadow: var(--bs-hover);
+    color: white;
+    background-color: gray;
+}
+
+.title-div {
+    margin-top: 3%;
+    margin-bottom: 1.5%;
 }
