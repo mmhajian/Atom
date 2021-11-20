@@ -1,4 +1,4 @@
-document.getElementById("param").onclick = atomPholder();
+document.getElementById("param").ontoggle = atomPholder();
 
 function atomPholder() {
     //Variables

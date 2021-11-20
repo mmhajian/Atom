@@ -28,7 +28,7 @@
                     </div>
                     <div class="params">
                         <label for="param"></label>
-                        <select name="param" id="param" class="param" required>
+                        <select name="param" id="param" class="param" onchange="atomPholder()" required>
                             <option value="name">Atom Name</option>
                             <option value="number">Atomic Number</option>
                             <option value="mass">Atomic Mass</option>
@@ -48,5 +48,6 @@
     <footer>
 
     </footer>
+    <script src="/script/script.js"></script>
 </body>
 </html>
