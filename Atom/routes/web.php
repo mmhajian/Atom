@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Atom;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +18,11 @@ Route::get('/', function () {
 });
 
 // Explore for atoms
-Route::prefix("explore")->group(function() {
-    Route::get("/", function() {
-
+Route::prefix("explore")->group(function () {
+    Route::get("/", function () {
     });
 
-    Route::get("/{param}/{query}", function($param, $query) {
+    Route::get("/{param}/{query}", function ($param, $query) {
         return view("explore.explore", [
             "param" => $param,
             "query" => $query
@@ -33,29 +31,9 @@ Route::prefix("explore")->group(function() {
 });
 
 // Atoms
-Route::prefix("atom")->group(function() {
-    Route::get("/", function() {
-
+Route::prefix("atom")->namespace("Admin")->group(function () {
+    Route::get("/", function () {
     });
 
-    Route::get("/{atom}", function($atom) {
-        //Variables
-        $atom_exists = Atom::where("name", ucfirst($atom))->exists();
-
-        //Proccesses
-
-        //Atom exists
-        if ($atom_exists) {
-            return view("atom.atom", [
-                "atom" => $atom,
-            ]);
-        }
-
-        //Atom not exists
-        else {
-            return view("found.atom", [
-                "atom" => $atom,
-            ]);
-        }
-    });
+    Route::get("/{atom}", "Atom@index");
 });
