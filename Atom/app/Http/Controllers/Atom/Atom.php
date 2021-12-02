@@ -26,7 +26,7 @@ class Atom extends Controller
 
         //Atom not exists
         else {
-            return view("atom.found", [
+            return view("found.atom", [
                 "atom" => $atom,
             ]);
         }

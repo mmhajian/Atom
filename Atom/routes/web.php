@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Atom\Atom;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,5 @@ Route::prefix("atom")->namespace("Atom")->group(function () {
     Route::get("/", function () {
     });
 
-    Route::get("/{atom}", "Atom@index");
+    Route::get("/{atom}", [Atom::class, "index"]);
 });
