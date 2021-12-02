@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Atom\Atom;
+use App\Http\Controllers\Home\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,7 @@ use App\Http\Controllers\Atom\Atom;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [Home::class, "index"]);
 
 // Explore for atoms
 Route::prefix("explore")->group(function () {
