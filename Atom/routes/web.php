@@ -31,7 +31,7 @@ Route::prefix("explore")->group(function () {
 });
 
 // Atoms
-Route::prefix("atom")->namespace("Admin")->group(function () {
+Route::prefix("atom")->namespace("Atom")->group(function () {
     Route::get("/", function () {
     });
 
