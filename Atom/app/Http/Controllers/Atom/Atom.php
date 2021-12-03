@@ -19,7 +19,7 @@ class Atom extends Controller
 
         //Atom exists
         if ($atom_pre->exsits()) {
-            $atom_object = new AtomModel($atom_pre->get("id"));
+            $atom_object = new AtomModel($atom_pre->get()->id);
             return view("atom.atom", [
                 "id" => $atom_object->Id(),
                 "name" => $atom_object->Name(),
