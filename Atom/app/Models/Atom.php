@@ -37,32 +37,33 @@ class Atom extends Model
     public function __construct(int $id)
     {
         //Proccesses
-        $atom_object = Atom::where("id", $id);
 
-        if ($atom_object->exists()) {
-            //Getting values
-            $name = $atom_object->get("name");
-            $atomic_number = $atom_object->get("atomic_number");
-            $atomic_mass = $atom_object->get("atomic_mass");
-            $symbol = $atom_object->get("symbol");
-            $stability = $atom_object->get("stability");
-            $isotopes = $atom_object->get("isotopes");
-            $proton = $atom_object->get("proton");
-            $electron = $atom_object->get("electron");
-            $neutron = $atom_object->get("neutron");
+        //Variables
+        $atom_object = Atom::find($id);
 
-            //Initializing values
-            $this->id = $id;
-            $this->name = $name;
-            $this->atomic_number = $atomic_number;
-            $this->atomic_mass = $atomic_mass;
-            $this->symbol = $symbol;
-            $this->stability = $stability;
-            $this->isotopes = $isotopes;
-            $this->proton = $proton;
-            $this->electron = $electron;
-            $this->neutron = $neutron;
-        }
+        //Getting values
+
+        $name = $atom_object->value("name");
+        $atomic_number = $atom_object->value("atomic_number");
+        $atomic_mass = $atom_object->value("atomic_mass");
+        $symbol = $atom_object->value("symbol");
+        $stability = $atom_object->value("stability");
+        $isotopes = $atom_object->value("isotopes");
+        $proton = $atom_object->value("proton");
+        $electron = $atom_object->value("electron");
+        $neutron = $atom_object->value("neutron");
+
+        //Initializing values
+        $this->id = $id;
+        $this->name = $name;
+        $this->atomic_number = $atomic_number;
+        $this->atomic_mass = $atomic_mass;
+        $this->symbol = $symbol;
+        $this->stability = $stability;
+        $this->isotopes = $isotopes;
+        $this->proton = $proton;
+        $this->electron = $electron;
+        $this->neutron = $neutron;
     }
 
     public function Id()
