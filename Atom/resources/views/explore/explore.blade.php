@@ -11,10 +11,14 @@
 
     </header>
     <main>
-        
+        <div id="document">
+            <explore></explore>
+        </div>
     </main>
     <footer>
 
     </footer>
+    <script src="/js/app.js"></script>
+    <script src="/script/script.js"></script>
 </body>
 </html>

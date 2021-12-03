@@ -13,14 +13,24 @@ class Atom extends Controller
     {
         //Variables
         $str = Str::ucfirst(Str::lower($atom));
-        $atom_exists = AtomModel::where("name", $str)->exists();
+        $atom_pre = AtomModel::where("name", $str);
 
         //Proccesses
 
         //Atom exists
-        if ($atom_exists) {
+        if ($atom_pre->exsits()) {
+            $atom_object = new AtomModel($atom_pre->get("id"));
             return view("atom.atom", [
-                "atom" => $atom,
+                "id" => $atom_object->Id(),
+                "name" => $atom_object->Name(),
+                "atomic_number" => $atom_object->Atomic_Number(),
+                "atomic_mass" => $atom_object->Atomic_Mass(),
+                "symbol" => $atom_object->Symbol(),
+                "stability" => $atom_object->Stability(),
+                "isotopes" => $atom_object->Isotopes(),
+                "proton" => $atom_object->Proton(),
+                "electron" => $atom_object->Electron(),
+                "neutron" => $atom_object->Neutron()
             ]);
         }
 

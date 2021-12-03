@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Atom\Atom;
-use App\Http\Controllers\Home\Home;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,15 +19,7 @@ Route::get('/', [Home::class, "index"]);
 
 // Explore for atoms
 Route::prefix("explore")->group(function () {
-    Route::get("/", function () {
-    });
-
-    Route::get("/{param}/{query}", function ($param, $query) {
-        return view("explore.explore", [
-            "param" => $param,
-            "query" => $query
-        ]);
-    });
+    Route::get("/", [Explore::class, "index"]);
 });
 
 // Atoms
