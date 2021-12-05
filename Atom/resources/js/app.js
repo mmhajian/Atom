@@ -4,6 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+const { toInteger } = require('lodash');
+
 require('./bootstrap');
 
 window.Vue = require('vue').default;
@@ -33,3 +35,35 @@ Vue.component("atom", require("./components/Atom.vue").default)
 const app = new Vue({
     el: '#document',
 });
+
+var stable = document.getElementById("stable");
+
+if (stable.textContent == "Stable") {
+    stable.style.color = "var(--stable-color)";
+}
+else {
+    stable.style.color = "var(--unstable-color)";
+}
+
+///////////////////////////////////////////////
+
+var proton = document.getElementById("proton");
+var neutron = document.getElementById("neutron");
+
+if (eval(proton.textContent) >= 84) {
+    proton.style.color = "var(--unstable-color)";
+}
+if(eval(proton.textContent) < 84) {
+    proton.style.color = "var(--stable-color)";
+}
+
+var max_neu = eval(proton.textContent) * 1.5;
+
+if (eval(neutron.textContent) >= max_neu) {
+    neutron.style.color = "var(--unstable-color)";
+}
+if(eval(neutron.textContent) < max_neu) {
+    neutron.style.color = "var(--stable-color)";
+}
+
+///////////////////////////////////////////////

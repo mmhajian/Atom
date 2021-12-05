@@ -2071,11 +2071,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -2203,6 +2198,9 @@ __webpack_require__.r(__webpack_exports__);
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    toInteger = _require.toInteger;
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
@@ -2229,6 +2227,35 @@ Vue.component("atom", (__webpack_require__(/*! ./components/Atom.vue */ "./resou
 var app = new Vue({
   el: '#document'
 });
+var stable = document.getElementById("stable");
+
+if (stable.textContent == "Stable") {
+  stable.style.color = "var(--stable-color)";
+} else {
+  stable.style.color = "var(--unstable-color)";
+} ///////////////////////////////////////////////
+
+
+var proton = document.getElementById("proton");
+var neutron = document.getElementById("neutron");
+
+if (eval(proton.textContent) >= 84) {
+  proton.style.color = "var(--unstable-color)";
+}
+
+if (eval(proton.textContent) < 84) {
+  proton.style.color = "var(--stable-color)";
+}
+
+var max_neu = eval(proton.textContent) * 1.5;
+
+if (eval(neutron.textContent) >= max_neu) {
+  neutron.style.color = "var(--unstable-color)";
+}
+
+if (eval(neutron.textContent) < max_neu) {
+  neutron.style.color = "var(--stable-color)";
+} ///////////////////////////////////////////////
 
 /***/ }),
 
@@ -37888,11 +37915,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", [_c("h1", [_vm._v(_vm._s(_vm.$atom))])]),
-    _vm._v(" "),
-    _c("div", [_c("h3", [_vm._v(_vm._s(_vm.$atomic_number))])]),
-  ])
+  return _c("div")
 }
 var staticRenderFns = []
 render._withStripped = true

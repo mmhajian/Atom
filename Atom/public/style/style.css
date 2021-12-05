@@ -3,6 +3,9 @@
     --bs-blur: 0 0 8px rgba(77, 74, 74, 0.6);
     --bs-hover: 0 0 12px rgba(77, 74, 74, 0.767);
     --bs-focus: 0 0 12px rgb(0, 195, 255);
+    --p-color-purple: rgb(255, 0, 85);
+    --stable-color: rgb(85, 255, 0);
+    --unstable-color: rgb(255, 115, 0);
 }
 
 @font-face {
@@ -115,4 +118,22 @@ option {
 
 .f-atom-title {
     color: rgb(255, 0, 100);
+}
+
+.atom-symbol {
+    margin: 5px;
+}
+
+.symbol-div {
+    display: inline-flex;
+    align-items: center;
+    font-size: 175%;
+}
+
+.symbol-number {
+    color: var(--p-color);
+}
+
+.symbol-mass {
+    color: var(--p-color-purple);
 }
