@@ -16,26 +16,26 @@ class Atom extends Controller
         $atom_pre = AtomModel::where("name", $str);
 
         //Proccesses
+        if ($atom_pre->exists()) {
+            $id = $atom_pre->value("id");
 
-        //Atom exists
-        if ($atom_pre->exsits()) {
-            $atom_obj = $atom_pre->get();
-            $atom_object = new AtomModel($atom_obj->name);
+            $atom_object = AtomModel::getAtomById($id);
+
             return view("atom.atom", [
-                "id" => $atom_object->Id(),
-                "name" => $atom_object->Name(),
-                "atomic_number" => $atom_object->Atomic_Number(),
-                "atomic_mass" => $atom_object->Atomic_Mass(),
-                "symbol" => $atom_object->Symbol(),
-                "stability" => $atom_object->Stability(),
-                "isotopes" => $atom_object->Isotopes(),
-                "proton" => $atom_object->Proton(),
-                "electron" => $atom_object->Electron(),
-                "neutron" => $atom_object->Neutron()
+                "atom" => $str,
+                "name" => $atom_object->name,
+                "atomic_number" => $atom_object->atomic_number,
+                "atomic_mass" => $atom_object->atomic_mass,
+                "symbol" => $atom_object->symbol,
+                "stability" => $atom_object->stability,
+                "isotopes" => $atom_object->isotopes,
+                "proton" => $atom_object->proton,
+                "electron" => $atom_object->electron,
+                "neutron" => $atom_object->neutron
             ]);
         }
 
-        //Atom not exists
+        //Atom does not exists
         else {
             return view("found.atom", [
                 "atom" => $atom,

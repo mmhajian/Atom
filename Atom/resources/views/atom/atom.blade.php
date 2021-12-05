@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atom - {{ $atom }}</title>
+    <title>Atom - {{ Str::ucfirst(Str::lower($name)) }}</title>
 </head>
 <body>
     <header>
 
     </header>
     <main>
-        <div id="document">
-            <explore></explore>
+        <div>
+            <h1>
+                {{ Str::ucfirst(Str::lower($name)) }}
+            </h1>
+            <h3>
+                {{ $atomic_number }}
+            </h3>
         </div>
     </main>
     <footer>
 
     </footer>
-    <script src="/js/app.js"></script>
     <script src="/script/script.js"></script>
 </body>
 </html>

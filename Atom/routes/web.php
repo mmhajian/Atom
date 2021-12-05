@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Atom\Atom;
-use App\Http\Controllers;
+use App\Http\Controllers\Home\Home;
+use App\Http\Controllers\Explore\Explore;
 
 /*
 |--------------------------------------------------------------------------
